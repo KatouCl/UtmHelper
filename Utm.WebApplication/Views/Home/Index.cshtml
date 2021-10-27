@@ -1,8 +1,25 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Utm.Application.Cqrs.Utms.Commands.UpdateUtm.UtmDto
+
+@{
+    ViewData["Title"] = "Главная страница";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h3 class="display-4">Данные о Утме</h3>
+
+    <form asp-area="" asp-controller="Home" asp-action="ApplySettings" method="post" class="mt-5 align-content-center">
+        <div class="form-row">
+            <div class="col-5">
+                <input asp-for="Address" type="text" class="form-control" placeholder="Адрес">
+                <span class="invalid-feedback" asp-validation-for="Address">Введите адрес</span>
+            </div>
+            <div class="col-3">
+                <input asp-for="Port" type="text" class="form-control" placeholder="Порт">
+                <span class="invalid-feedback" asp-validation-for="Port">Введите порт</span>
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary mb-2">Применить</button>
+            </div>
+        </div>
+    </form>
 </div>

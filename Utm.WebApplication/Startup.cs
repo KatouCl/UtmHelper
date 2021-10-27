@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Utm.Application;
 
 namespace Utm.WebApplication
 {
@@ -22,6 +23,8 @@ namespace Utm.WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplication();
+            
             services.AddControllersWithViews();
         }
 
@@ -36,6 +39,7 @@ namespace Utm.WebApplication
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
             app.UseStaticFiles();
 
             app.UseRouting();

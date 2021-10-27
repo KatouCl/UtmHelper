@@ -2,6 +2,37 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <LangVersion>9</LangVersion>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Common" />
+      <Folder Include="Cqrs\Marks\Commands" />
+      <Folder Include="Cqrs\Utms\Queries" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="9.0.0" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="3.1.20" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.20" />
+      <PackageReference Include="RestSharp" Version="106.12.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Http.Features, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+        <HintPath>..\Utm.WebApplication\bin\Debug\netcoreapp3.1\win7-x64\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+        <HintPath>..\Utm.WebApplication\bin\Debug\netcoreapp3.1\win7-x64\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.20.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+        <HintPath>..\Utm.WebApplication\bin\Debug\netcoreapp3.1\win7-x64\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Utm.Domain\Utm.Domain.csproj" />
+    </ItemGroup>
 
 </Project>

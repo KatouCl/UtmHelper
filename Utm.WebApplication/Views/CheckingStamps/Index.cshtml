@@ -1,0 +1,60 @@
+﻿@* @model Utm.WebApplication.ViewModel.Mark.MarkListingVm *@
+
+@{
+    ViewBag.Title = "Проверка марок";
+    Layout = "_Layout";
+}
+
+<h3>@ViewData["CountMarks"]</h3>
+<form asp-area="" asp-controller="CheckingStamps" asp-action="SearchMark" method="post" class="mt-5 align-content-center">
+    <div class="form-row">
+        <div class="col-7">
+            <input name="searchQuery" type="text" class="form-control" placeholder="Марка">
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary mb-2">Поиск</button>
+        </div>
+    </div>
+</form>
+
+<form asp-area="" asp-controller="CheckingStamps" asp-action="UploadFile" method="post" enctype="multipart/form-data"
+      class="align-content-center">
+    <div class="form-row">
+        <div class="custom-file col-7">
+            <input type="file" class="custom-file-input" name="uploadFile">
+            <label class="custom-file-label">Выберите .txt файл для загрузки марок</label>
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary mb-2">Загрузить Марки</button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-hover">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Марка</th>
+        <th scope="col">Статус</th>
+    </tr>
+    </thead>
+    <tbody>
+    @* @if (Model.Marks.Any()) *@
+    @* { *@
+    @*     foreach (var item in Model.Marks) *@
+    @*     { *@
+    <tr>
+        <th scope="row"> 1<th>
+        <th>item.Code</th>
+        <th>item.Owner</th>
+    </tr>
+    @*     } *@
+    @* } *@
+    @* else *@
+    @* { *@
+    @*     <tr> *@
+    @*         Заполните данные. *@
+    @*     </tr> *@
+    @* } *@
+    </tbody>
+</table>
